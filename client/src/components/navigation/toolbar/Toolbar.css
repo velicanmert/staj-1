@@ -1,0 +1,94 @@
+.Toolbar {
+  height: 56px;
+  width: 100%;
+  position: fixed; /*Need to stay at the top even we scroll*/
+  top: 0;
+  left: 0;
+  background-color: #b68352;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 90; /*This number should be lower than the Backdrop component's z-index*/
+}
+
+.Toolbar nav {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ToolbarInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ToolbarInput input {
+  border: none !important; /* Border cizmesin diye */
+  /* border-width: '0px'; */
+  box-shadow: none;
+  outline: '0';
+}
+
+.ToolbarInput input::placeholder {
+  opacity: 0.6; /* Chrome, Firefox */
+}
+
+.ToolbarInput input:focus {
+  outline: none !important; /* Border cizmesin diye */
+}
+
+.ToolbarLogo {
+  height: 80%;
+}
+
+.ToolbarButton {
+  /* background-color: transparent; */
+  border: none;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 8px 18px;
+  margin: 0 10px;
+  font-weight: bold;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Primary {
+  background-color: '#2185d0';
+}
+
+.ToolbarButton:hover {
+  background-color: #a1b0cc !important;
+}
+
+.ToolbarButton:active {
+  /* background-color: #3e8e41 !important; */
+  /* box-shadow: 0 5px #666; */
+  box-shadow: 0 2px rgba(26, 22, 61, 0.16);
+  transform: translateY(4px);
+}
+
+.ToolbarButtonSuccess {
+  background-color: #21ba45;
+  color: white !important;
+}
+
+.ToolbarButtonDanger {
+  background-color: #db2828;
+  color: white;
+}
+
+/* If we are on a mobile device */
+/* @media (max-width: 499px) {
+  .ToolbarDesktopOnly {
+    display: none;
+  }
+} */

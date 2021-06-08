@@ -1,0 +1,41 @@
+.Button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  margin: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* Butonun text'ini en sola dayiyordu, o yuzden kaldirildi. */
+/* .Button:first-of-type {
+  margin-left: 0;
+  padding-left: 0;
+} */
+
+.Button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.Button:hover {
+  background-color: #ccd4c1;
+}
+
+.Button:active {
+  /* background-color: #3e8e41 !important; */
+  box-shadow: 0 2px rgba(26, 22, 61, 0.16);
+  transform: translateY(4px);
+}
+
+.Success {
+  color: #5c9210;
+}
+
+.Danger {
+  color: #944317;
+}

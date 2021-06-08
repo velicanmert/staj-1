@@ -1,0 +1,46 @@
+{
+  "viewKey": {
+    "label": "View key",
+    "elementType": "input",
+    "elementConfig": {
+      "type": "text",
+      "placeholder": "View key",
+      "disabled": true
+    },
+    "value": "",
+    "validation": { "required": true },
+    "valid": false,
+    "touched": false
+  },
+  "enValue": {
+    "label": "English value",
+    "elementType": "input",
+    "elementConfig": { "type": "text", "placeholder": "English value" },
+    "value": "",
+    "validation": { "required": true },
+    "valid": false,
+    "touched": false
+  },
+  "trValue": {
+    "label": "Turkish value",
+    "elementType": "input",
+    "elementConfig": { "type": "text", "placeholder": "Turkish value" },
+    "value": "",
+    "validation": { "required": true },
+    "valid": false,
+    "touched": false
+  },
+  "parentFile": {
+    "label": "Parent file",
+    "elementType": "select",
+    "elementConfig": {
+      "options": [
+        { "value": "deneme1", "displayValue": "DENEME 1" },
+        { "value": "deneme2", "displayValue": "DENEME 2" }
+      ]
+    },
+    "value": "deneme1",
+    "validation": {},
+    "valid": true
+  }
+}

@@ -1,0 +1,54 @@
+.AlignRight {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+}
+
+.EntityFormData {
+  margin-top: 20px;
+  text-align: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+/* @media (min-width: 900px) {
+  .EntityFormData {
+    width: 500px;
+  }
+} */
+
+.EntityInputElement {
+  outline: none;
+  border: 1px solid #ccc;
+  background-color: white;
+  font: inherit;
+  padding: 6px 10px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.EntityInputElement:focus {
+  outline: none;
+  background-color: #ccc;
+}
+
+.EntityForm-projects-add-new-button {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #045380;
+  color: white;
+  align-self: flex-end;
+  margin-bottom: 10px;
+}
+
+.EntityForm-projects-add-new-button:hover {
+  background-color: #ccc;
+  color: black;
+}
