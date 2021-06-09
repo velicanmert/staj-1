@@ -51,7 +51,7 @@ public class UserController {
     }
 
     @PreAuthorize("hasRole('ROLE_USER')")
-    @RequestMapping("/{username}/change")
+    @RequestMapping("/{username}/edit")
     @PutMapping
     public void change(@PathVariable("username") String username, @RequestBody JwtRequest authenticationRequest) throws Exception {
 
@@ -76,40 +76,39 @@ public class UserController {
     }
 
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @RequestMapping("/show")
+    @RequestMapping("/showall")
     @GetMapping
-    public String show (){
+    public List<PersonnelResponseDTO> show (){
         List<Personnel> list = new ArrayList<>();
         personnelRepository.findAll().forEach(list::add);
-        String str ="";
+        List<PersonnelResponseDTO> list1 = new ArrayList<>();
         for (int i =0; i<list.size();i++) {
-            Personnel p = list.get(i);
-            str = str +"Username :" + p.getUsername() + " , " + "Birthdate: " + p.getBirthDate() + " , " + "Identification Number: " + p.getIdentificationNo() + "\n";
+            list1.add( getPersonnel(list.get(i).getUsername()));
             }
 
 
-       return str;
+       return list1;
     }
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping("/search")
     @PostMapping
-    public String search(@RequestBody JwtRequest abc)throws ParseException{
+    public List<PersonnelResponseDTO> search(@RequestBody JwtRequest abc)throws ParseException{
         SimpleDateFormat date = new SimpleDateFormat("dd-MM-yyyy");
         Date date1 = date.parse(abc.getBirth_date());
         List<Personnel> list = new ArrayList<>();
         personnelRepository.findAll().forEach(list::add);
-        String str = "";
+        List<PersonnelResponseDTO> list1 = new ArrayList<>();
+
         for(int i =0; i< list.size();i++){
             Date date2 = date.parse(list.get(i).getBirthDate());
-            // Girdiğimiz tarihten kücük olanı bastırıyoruz hberiniz olsun
+            // Girdiğimiz tarihten kücük olanı bastırıyorum hberiniz olsun
             if(date1.compareTo(date2)<0)
             {
-                Personnel p = list.get(i);
-                str = str +"Username :" + p.getUsername() + " , " + "Birthdate: " + p.getBirthDate() + " , " + "Identification Number: " + p.getIdentificationNo() + "\n";
+                    list1.add( getPersonnel(list.get(i).getUsername()));
             }
 
         }
-        return str ;
+        return list1 ;
 
     }
 
