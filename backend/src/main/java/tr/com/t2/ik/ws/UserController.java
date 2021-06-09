@@ -9,8 +9,13 @@ import tr.com.t2.ik.model.Personnel;
 import tr.com.t2.ik.repository.PersonnelRepository;
 import tr.com.t2.ik.ws.dto.JwtRequest;
 import tr.com.t2.ik.ws.dto.PersonnelResponseDTO;
+
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Date;
+import java.text.*;
+
 
 import java.util.Optional;
 
@@ -84,6 +89,28 @@ public class UserController {
 
 
        return str;
+    }
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @RequestMapping("/search")
+    @PostMapping
+    public String search(@RequestBody JwtRequest abc)throws ParseException{
+        SimpleDateFormat date = new SimpleDateFormat("dd-MM-yyyy");
+        Date date1 = date.parse(abc.getBirth_date());
+        List<Personnel> list = new ArrayList<>();
+        personnelRepository.findAll().forEach(list::add);
+        String str = "";
+        for(int i =0; i< list.size();i++){
+            Date date2 = date.parse(list.get(i).getBirthDate());
+            // Girdiğimiz tarihten kücük olanı bastırıyoruz hberiniz olsun
+            if(date1.compareTo(date2)<0)
+            {
+                Personnel p = list.get(i);
+                str = str +"Username :" + p.getUsername() + " , " + "Birthdate: " + p.getBirthDate() + " , " + "Identification Number: " + p.getIdentificationNo() + "\n";
+            }
+
+        }
+        return str ;
+
     }
 
 }
