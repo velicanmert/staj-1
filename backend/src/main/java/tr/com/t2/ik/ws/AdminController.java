@@ -26,7 +26,7 @@ public class AdminController {
     private PersonnelRepository personnelRepository;
 
     @RequestMapping("/api/admins/add")
-    @GetMapping
+    @PostMapping
     public void add(@RequestBody JwtRequest authenticationRequest){
         Personnel newPerson = new Personnel();
         Role user = new Role();

@@ -71,24 +71,19 @@ public class UserController {
     }
 
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @RequestMapping("/users/show")
+    @RequestMapping("/show")
     @GetMapping
-    public PersonnelResponseDTO show (){
+    public String show (){
         List<Personnel> list = new ArrayList<>();
         personnelRepository.findAll().forEach(list::add);
-        for (Personnel personnel : list) {
-            return PersonnelResponseDTO
-                    .builder()
-                    .username(personnel.getUsername())
-                    .roles(personnel.getRoles())
-                    .dateBirth(personnel.getBirthDate())
-                    .identificationNo(personnel.getIdentificationNo())
-                    .status(personnel.getStatus())
-                    .build();
+        String str ="";
+        for (int i =0; i<list.size();i++) {
+            Personnel p = list.get(i);
+            str = str +"Username :" + p.getUsername() + " , " + "Birthdate: " + p.getBirthDate() + " , " + "Identification Number: " + p.getIdentificationNo() + "\n";
+            }
 
 
-        }
-        return null;
+       return str;
     }
 
 }
