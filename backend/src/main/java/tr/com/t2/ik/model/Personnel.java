@@ -24,6 +24,13 @@ public class Personnel {
     @Column
     private String password;
 
+    @Column
+    private String identificationNo;
+    @Column
+    private String birthDate;
+    @Column
+    private String status;
+
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             name = "personnel_roles",

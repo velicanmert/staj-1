@@ -11,6 +11,8 @@ import java.util.Set;
 public class PersonnelResponseDTO {
 
     private String username;
-
+    private String dateBirth;
+    private String identificationNo;
+    private String status;
     private Set<Role> roles;
 }

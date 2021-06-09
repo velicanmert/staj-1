@@ -13,6 +13,8 @@ import tr.com.t2.ik.repository.RoleRepository;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
+import java.util.ArrayList;
 
 @SpringBootApplication
 public class T2IKApplication {
@@ -38,11 +40,17 @@ public class T2IKApplication {
             mete.setUsername("metehan.danaci");
             mete.setPassword(new BCryptPasswordEncoder().encode("mete"));
             mete.setRoles(new HashSet<>(Arrays.asList(admin, user)));
+            mete.setBirthDate("11-11-1990");
+            mete.setIdentificationNo("123456780");
+            mete.setStatus("active");
 
             Personnel tan = new Personnel();
             tan.setUsername("tan.apaydin");
             tan.setPassword(new BCryptPasswordEncoder().encode("tan"));
             tan.setRoles(new HashSet<>(Collections.singletonList(user)));
+            tan.setBirthDate("04-11-1990");
+            tan.setIdentificationNo("11111111");
+            tan.setStatus("active");
 
             personnelRepository.saveAll(Arrays.asList(mete,tan));
         };
