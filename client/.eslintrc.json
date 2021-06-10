@@ -1,3 +1,0 @@
-{
-  "extends": ["rect-app", "plugin:prettier/recommended"]
-}
