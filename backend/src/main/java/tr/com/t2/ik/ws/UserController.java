@@ -19,6 +19,7 @@ import java.text.*;
 
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/users")
 @PreAuthorize("hasRole('ROLE_USER')")

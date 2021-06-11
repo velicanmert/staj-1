@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Services from '../services/Services';
+import { getUsers, login } from '../services/Services';
 
 class MyComponent extends Component {
   state = {
+    myText: 'Test',
     token: ''
   };
 
@@ -20,18 +21,23 @@ class MyComponent extends Component {
     );
   }
 
+  loginMethod = (id, pw) => {
+    login(id, pw).then(response => {
+      this.setState({ token: response });
+    });
+  };
+
+  getUsersMethod = () => {
+    getUsers().then(res => {
+      console.log('metehan.danaci info:', res);
+    });
+  };
+
   handleLoginButton = () => {
     console.log('You have clicked the login button!');
-    Services.login('metehan.danaci', 'mete').then(response => {
-      console.log(response.data);
-    });
-    /*Services.getUsers().then(response => {
-      this.setState({ myText: response.data });
-    });*/
-    /*Services.getUsers().then(response => {
-      console.log('sa');
-      console.log(response.data);
-    });*/
+    this.loginMethod('metehan.danaci', 'mete');
+    console.log('login is done, getUsers will be done!');
+    this.getUsersMethod();
   };
 
   method() {

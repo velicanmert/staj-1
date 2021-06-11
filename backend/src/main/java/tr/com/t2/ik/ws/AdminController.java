@@ -13,6 +13,7 @@ import java.security.Principal;
 import java.util.Collections;
 import java.util.HashSet;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class AdminController {
     @RequestMapping("/api/admins")
