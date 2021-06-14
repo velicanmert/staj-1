@@ -17,3 +17,10 @@ export const getUsers = async () => {
   ).data;
   return userInfo;
 };
+
+export const editUser = async () => {
+  await axios.put('http://localhost:8080/api/users/metehan.danaci/edit', {
+    birth_date: '01 - 01 - 0101',
+    identification_no: '111111111'
+  });
+};
