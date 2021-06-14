@@ -33,11 +33,15 @@ class MyComponent extends Component {
     });
   };
 
-  handleLoginButton = () => {
+  delay = ms => new Promise(res => setTimeout(res, ms));
+
+  handleLoginButton = async () => {
     console.log('You have clicked the login button!');
     this.loginMethod('metehan.danaci', 'mete');
+    await this.delay(1000);
     console.log('login is done, getUsers will be done!');
     this.getUsersMethod();
+    console.log('get users is done!');
   };
 
   method() {
