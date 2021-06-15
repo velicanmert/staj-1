@@ -10,7 +10,6 @@ class MyComponent extends Component {
   render() {
     return (
       <div>
-        <img src={'https://picsum.photos/200'} alt='' />
         <div>
           <h1 style={{ fontSize: 20 }} className={'badge m-2 badge-primary'}>
             {this.method()}
