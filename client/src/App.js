@@ -6,6 +6,8 @@ import Edit from './pages/Edit';
 import UserInfo from './pages/UserInfo';
 
 function App() {
+  localStorage.removeItem('username');
+  localStorage.removeItem('token');
   return (
     <div className='App'>
       <Router>

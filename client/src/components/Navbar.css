@@ -66,3 +66,7 @@
   justify-content: start;
   align-items: center;
 }
+
+.title {
+  margin-left: 16px;
+}
