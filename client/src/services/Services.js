@@ -12,13 +12,15 @@ export const login = async (id, pw) => {
 
 export const getUsers = async () => {
   let userInfo = (
-    await axios.get('http://localhost:8080/api/users/metehan.danaci')
+    await axios.get(
+      `http://localhost:8080/api/users/${localStorage.getItem('username')}`
+    )
   ).data;
   return userInfo;
 };
 
 export const editUser = async () => {
-  await axios.put('http://localhost:8080/api/users/metehan.danaci/edit', {
+  await axios.put(`http://localhost:8080/api/users/metehan.danaci/edit`, {
     birth_date: '01 - 01 - 0101',
     identification_no: '111111111'
   });

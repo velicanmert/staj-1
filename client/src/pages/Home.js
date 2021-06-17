@@ -48,6 +48,7 @@ function Home() {
     loginMethod(localStorage.getItem('username'), state.pw);
     console.log('login is done!');
   };
+
   if (localStorage.getItem('token')) {
     return (
       <Form className='page'>
