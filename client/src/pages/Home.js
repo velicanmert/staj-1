@@ -19,23 +19,24 @@ function Home() {
     }
   };
 
-  const state = {
-    pw: ''
-  };
-  const getUserName = value => {
-    localStorage.setItem('username', value);
-  };
-
-  const getPassword = value => {
-    state.pw = value;
-  };
-
   const onFinish = values => {
     console.log('Success:', values);
   };
 
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo);
+  };
+
+  const state = {
+    pw: ''
+  };
+
+  const getUserName = value => {
+    localStorage.setItem('username', value);
+  };
+
+  const getPassword = value => {
+    state.pw = value;
   };
 
   const loginMethod = (id, pw) => {
@@ -51,9 +52,10 @@ function Home() {
 
   if (localStorage.getItem('token')) {
     return (
-      <Form className='page'>
-        <div>Welcome</div>
-        <div>{localStorage.getItem('username')}</div>
+      <Form className='welcome'>
+        <div>
+          Welcome<div>{localStorage.getItem('username')}</div>
+        </div>
       </Form>
     );
   } else {
@@ -66,7 +68,6 @@ function Home() {
         onFinishFailed={onFinishFailed}
       >
         <Form.Item
-          className='username'
           label='Username'
           name='username'
           rules={[
@@ -83,6 +84,7 @@ function Home() {
         </Form.Item>
 
         <Form.Item
+          className='password'
           label='Password'
           name='password'
           rules={[
@@ -100,7 +102,7 @@ function Home() {
 
         <Form.Item {...tailLayout}>
           <Button
-            className='SubmitButton'
+            className='SubmitLogin'
             type='primary'
             htmlType='submit'
             onClick={handleLoginButton}
