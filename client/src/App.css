@@ -8,7 +8,8 @@
 
 .home,
 .edit,
-.userInfo {
+.userInfo,
+.logout {
   display: flex;
   height: 90vh;
   align-items: center;

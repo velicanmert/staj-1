@@ -5,7 +5,7 @@ import * as AiIcons from 'react-icons/ai';
 export const SidebarData = [
   {
     title: 'Home',
-    path: '/',
+    path: '/home',
     icon: <AiIcons.AiFillHome />,
     className: 'nav-text'
   },
@@ -19,6 +19,12 @@ export const SidebarData = [
     title: 'Edit',
     path: '/edit',
     icon: <AiIcons.AiFillEdit />,
+    className: 'nav-text'
+  },
+  {
+    title: 'Logout',
+    path: '/logout',
+    icon: <AiIcons.AiOutlineLogout />,
     className: 'nav-text'
   }
 ];

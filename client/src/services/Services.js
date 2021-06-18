@@ -8,6 +8,7 @@ export const login = async (id, pw) => {
   let token = (await axios.post(LOGIN_API_URL, info)).data;
   localStorage.setItem('token', token);
   axios.defaults.headers.common = { Authorization: `Bearer ${token}` };
+  return token;
 };
 
 export const getUsers = async () => {

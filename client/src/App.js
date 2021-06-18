@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Edit from './pages/Edit';
 import UserInfo from './pages/UserInfo';
+import Logout from './pages/Logout';
+import Login from './pages/Login';
 
 function App() {
   localStorage.removeItem('username');
@@ -13,9 +15,11 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route path='/' exact component={Home} />
+          <Route path='/' exact component={Login} />
+          <Route path='/home' exact component={Home} />
           <Route path='/userInfo' exact component={UserInfo} />
           <Route path='/edit' exact component={Edit} />
+          <Route path='/logout' exact component={Logout} />
         </Switch>
       </Router>
     </div>

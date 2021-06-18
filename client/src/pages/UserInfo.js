@@ -8,7 +8,7 @@ function UserInfo() {
   useEffect(() => {
     getUsers().then(res => {
       setUserData(
-        '<div> Username: ' +
+        '<div>Username: ' +
           res.username +
           '</br>Date of birth: ' +
           res.dateBirth +
@@ -17,7 +17,7 @@ function UserInfo() {
           '</div>'
       );
     });
-  }, [getUsers]);
+  }, []);
 
   return (
     <div className='userInfo'>

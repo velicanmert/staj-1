@@ -43,9 +43,7 @@ function Edit() {
   };
 
   const handleEditButton = () => {
-    console.log('You have clicked the edit button!');
     editMethod(bdate, idno);
-    console.log('edit is done!');
   };
 
   return (
