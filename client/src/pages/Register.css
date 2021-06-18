@@ -1,0 +1,30 @@
+.page {
+  font-size: 1.2rem;
+  margin-left: 45%;
+  margin-top: 5%;
+}
+
+.SubmitRegister {
+  margin-top: 1rem;
+}
+
+.welcome {
+  font-size: 2rem;
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.password {
+  margin-top: 2%;
+}
+
+.idno {
+  margin-top: 2%;
+}
+
+.bdate {
+  margin-top: 2%;
+}

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { SidebarData } from './SidebarData';
+import { SidebarDataUser } from './SidebarDataUser';
 import './Navbar.css';
 import { IconContext } from 'react-icons';
-import { SidebarDataLogin } from './SidebarDataLogin';
+import { SidebarData } from './SidebarData';
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
@@ -27,7 +27,7 @@ function Navbar() {
                   <FaIcons.FaBars />
                 </Link>
               </li>
-              {SidebarData.map((item, index) => {
+              {SidebarDataUser.map((item, index) => {
                 return (
                   <li key={index} className={item.className}>
                     <Link to={item.path} onClick={showSidebar}>
@@ -58,7 +58,7 @@ function Navbar() {
                   <FaIcons.FaBars />
                 </Link>
               </li>
-              {SidebarDataLogin.map((item, index) => {
+              {SidebarData.map((item, index) => {
                 return (
                   <li key={index} className={item.className}>
                     <Link to={item.path} onClick={showSidebar}>

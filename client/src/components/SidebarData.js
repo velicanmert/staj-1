@@ -1,30 +1,18 @@
 import React from 'react';
-import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
+import * as FaIcons from 'react-icons/fa';
 
 export const SidebarData = [
   {
-    title: 'Home',
-    path: '/home',
-    icon: <AiIcons.AiFillHome />,
+    title: 'Login',
+    path: '/',
+    icon: <AiIcons.AiOutlineLogin />,
     className: 'nav-text'
   },
   {
-    title: 'User Info',
-    path: '/userInfo',
-    icon: <FaIcons.FaUserAlt />,
-    className: 'nav-text'
-  },
-  {
-    title: 'Edit',
-    path: '/edit',
-    icon: <AiIcons.AiFillEdit />,
-    className: 'nav-text'
-  },
-  {
-    title: 'Logout',
-    path: '/logout',
-    icon: <AiIcons.AiOutlineLogout />,
+    title: 'Register',
+    path: '/register',
+    icon: <FaIcons.FaRegRegistered />,
     className: 'nav-text'
   }
 ];
