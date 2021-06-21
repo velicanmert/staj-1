@@ -10,6 +10,12 @@ export const SidebarDataUser = [
     className: 'nav-text'
   },
   {
+    title: 'Leave Form',
+    path: '/leave',
+    icon: <AiIcons.AiOutlineForm />,
+    className: 'nav-text'
+  },
+  {
     title: 'User Info',
     path: '/userInfo',
     icon: <FaIcons.FaUserAlt />,

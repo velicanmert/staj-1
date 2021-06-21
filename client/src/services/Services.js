@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const LOGIN_API_URL = 'http://localhost:8080/api/login';
 const REGISTER_API_URL = 'http://localhost:8080/api/register';
+const LEAVE_FORM_API_URL = 'http://localhost:8080/api/leaveform';
 //const USERS_API_URL = 'http://localhost:8080/api/users';
 
 export const login = async (id, pw) => {
@@ -20,6 +21,17 @@ export const register = async (id, pw, bdate, idno) => {
     identification_no: idno
   };
   await axios.post(REGISTER_API_URL, info);
+};
+
+export const leave = async (id, date, count, type, reason) => {
+  let info = {
+    username: id,
+    date: date,
+    type: type,
+    reason: reason,
+    count: count
+  };
+  await axios.post(LEAVE_FORM_API_URL, info);
 };
 
 export const getUsers = async () => {

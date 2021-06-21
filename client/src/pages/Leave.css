@@ -1,0 +1,32 @@
+.page {
+  font-size: 1.2rem;
+  margin-left: 45%;
+  margin-top: 5%;
+}
+
+.SubmitLeaveForm {
+  margin-top: 1rem;
+}
+
+.datePicker {
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar {
+  margin-left: 60%;
+  align-items: center;
+  justify-content: center;
+}
+
+.count {
+  margin-top: 2%;
+}
+
+.type {
+  margin-top: 2%;
+}
+
+.reason {
+  margin-top: 2%;
+}
