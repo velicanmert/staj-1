@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { leave } from '../services/Services';
 import { Form, Input, Button } from 'antd';
-import DatePicker from 'react-datepicker';
 import './Leave.css';
 import { useHistory } from 'react-router-dom';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -22,10 +21,9 @@ function Leave() {
     }
   };
 
-  const [selectedDate, setSelectedDate] = useState();
-
   const onFinish = values => {
     console.log('Success:', values);
+    history.push('/home');
   };
 
   const onFinishFailed = errorInfo => {
@@ -35,7 +33,12 @@ function Leave() {
   const state = {
     count: '',
     type: '',
-    reason: ''
+    reason: '',
+    date: ''
+  };
+
+  const getDate = value => {
+    state.date = value;
   };
 
   const getCount = value => {
@@ -61,7 +64,7 @@ function Leave() {
       'username',
       localStorage.getItem('username'),
       'date',
-      state.selectedDate,
+      state.date,
       'count',
       state.count,
       'type',
@@ -71,12 +74,11 @@ function Leave() {
     );
     leaveMethod(
       localStorage.getItem('username'),
-      state.selectedDate,
+      state.date,
       state.count,
       state.type,
       state.reason
     );
-    history.push('/home');
   };
 
   return (
@@ -88,11 +90,22 @@ function Leave() {
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
-      <Form.Item className='datePicker' label='DatePicker'>
-        <DatePicker
-          selected={selectedDate}
-          onChange={date => setSelectedDate(date)}
-          dateFormat='dd-MM-yyyy'
+      <Form.Item
+        className='datePicker'
+        label='Start Date'
+        name='date'
+        rules={[
+          {
+            required: true,
+            message: 'Please input your start date of leave!'
+          }
+        ]}
+      >
+        <Input
+          type='date'
+          name='date'
+          format='dd-MM-yyyy'
+          onChange={event => getDate(event.target.value)}
         />
       </Form.Item>
 

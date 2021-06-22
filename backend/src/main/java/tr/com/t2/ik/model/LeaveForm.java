@@ -3,6 +3,7 @@ package tr.com.t2.ik.model;
 import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 
@@ -11,6 +12,9 @@ import javax.persistence.Id;
 public class LeaveForm {
 
     @Id
+    @GeneratedValue
+    private long id;
+
     @Column
     private String username;
 

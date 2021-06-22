@@ -52,3 +52,11 @@ export const editUser = async (bd, idno) => {
     }
   );
 };
+
+// Admin login and related functions will be added
+
+// To be used for displaying user's forms
+export const showForms = async username => {
+  let forms = (await axios.get(`${LEAVE_FORM_API_URL}/${username}/forms`)).data;
+  return forms;
+};
