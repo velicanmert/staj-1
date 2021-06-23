@@ -33,7 +33,7 @@ public class LeaveFormController {
     }
 
     public LeaveFormResponseDTO getLeaveForm(long id) {
-        Optional<LeaveForm> leaveFormOptional = leaveFormRepository.findById(id));
+        Optional<LeaveForm> leaveFormOptional = leaveFormRepository.findById(id);
         if (leaveFormOptional.isPresent()) {
             return LeaveFormResponseDTO
                     .builder()
@@ -55,9 +55,9 @@ public class LeaveFormController {
         leaveFormRepository.findAll().forEach(list::add);
         List<LeaveFormResponseDTO> list1 = new ArrayList<>();
         for (int i =0; i<list.size();i++) {
-            if(username.equals(list.get(i).getUsername()))(
-                list1.add( getLeaveForm(list.get(i).getId()));
-            )
+            if(username.equals(list.get(i).getUsername())) {
+                list1.add(getLeaveForm(list.get(i).getId()));
+            }
         }
         return list1;
     }

@@ -37,6 +37,11 @@ function Login() {
   const getUserName = value => {
     localStorage.setItem('username', value);
     state.userName = value;
+    if (state.userName === 't2admin') {
+      localStorage.setItem('isAdmin', 1);
+    } else {
+      localStorage.setItem('isAdmin', 0);
+    }
   };
 
   const getPassword = value => {

@@ -35,11 +35,18 @@ public class T2IKApplication {
 
             roleRepository.saveAll(Arrays.asList(admin,user));
 
+            Personnel t2admin = new Personnel();
+            t2admin.setUsername("t2admin");
+            t2admin.setPassword(new BCryptPasswordEncoder().encode("admin"));
+            t2admin.setRoles(new HashSet<>(Arrays.asList(admin, user)));
+            t2admin.setBirthDate("01-01-0001");
+            t2admin.setIdentificationNo("00000000001");
+            t2admin.setStatus("active");
 
             Personnel mete = new Personnel();
             mete.setUsername("metehan.danaci");
             mete.setPassword(new BCryptPasswordEncoder().encode("mete"));
-            mete.setRoles(new HashSet<>(Arrays.asList(admin, user)));
+            mete.setRoles(new HashSet<>(Collections.singletonList(user)));
             mete.setBirthDate("11-11-1990");
             mete.setIdentificationNo("123456780");
             mete.setStatus("active");
@@ -52,7 +59,7 @@ public class T2IKApplication {
             tan.setIdentificationNo("11111111");
             tan.setStatus("active");
 
-            personnelRepository.saveAll(Arrays.asList(mete,tan));
+            personnelRepository.saveAll(Arrays.asList(t2admin,mete,tan));
         };
     }
 }
