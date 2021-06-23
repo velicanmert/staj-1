@@ -3,7 +3,7 @@ import axios from 'axios';
 const LOGIN_API_URL = 'http://localhost:8080/api/login';
 const REGISTER_API_URL = 'http://localhost:8080/api/register';
 const LEAVE_FORM_API_URL = 'http://localhost:8080/api/leaveform';
-//const USERS_API_URL = 'http://localhost:8080/api/users';
+const SHOW_ALL_USERS_API_URL = 'http://localhost:8080/api/users/showall';
 
 export const login = async (id, pw) => {
   let info = { username: id, password: pw };
@@ -51,6 +51,11 @@ export const editUser = async (bd, idno) => {
       identification_no: idno
     }
   );
+};
+
+export const showAllUsers = async () => {
+  let userList = (await axios.get(SHOW_ALL_USERS_API_URL)).data;
+  return userList;
 };
 
 // Admin login and related functions will be added

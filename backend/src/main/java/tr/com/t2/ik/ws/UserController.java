@@ -85,11 +85,10 @@ public class UserController {
         List<PersonnelResponseDTO> list1 = new ArrayList<>();
         for (int i =0; i<list.size();i++) {
             list1.add( getPersonnel(list.get(i).getUsername()));
-            }
-
-
+        }
        return list1;
     }
+    
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping("/search")
     @PostMapping
@@ -102,15 +101,13 @@ public class UserController {
 
         for(int i =0; i< list.size();i++){
             Date date2 = date.parse(list.get(i).getBirthDate());
-            // Girdiğimiz tarihten kücük olanı bastırıyorum hberiniz olsun
+            // Girdiğimiz tarihten kücük olanı bastırıyorum haberiniz olsun
             if(date1.compareTo(date2)<0)
             {
                     list1.add( getPersonnel(list.get(i).getUsername()));
             }
-
         }
         return list1 ;
-
     }
 
 }
