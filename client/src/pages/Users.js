@@ -13,18 +13,19 @@ function Users() {
   }, []);
 
   const onClickHandler = username => {
-    console.log('username', username);
+    console.log('usernameForms', username);
+    localStorage.setItem('usernameForms', username);
   };
 
   return (
-    <div className='users'>
+    <div>
       {users.map(user => (
         <div className='users'>
-          <div className='username'>{user.username}</div>
-          <div>{user.identificationNo}</div>
-          <div>{user.status}</div>
+          <div className='username'>Username: {user.username}</div>
+          <div>ID No: {user.identificationNo}</div>
+          <div>Status: {user.status}</div>
           <Link to={`/forms`} onClick={() => onClickHandler(user.username)}>
-            <span>Forms</span>
+            <span>Leave Forms</span>
           </Link>
         </div>
       ))}

@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Leave from './pages/Leave';
 import Users from './pages/Users';
+import Forms from './pages/Forms';
 
 function App() {
   localStorage.removeItem('username');
@@ -26,6 +27,7 @@ function App() {
           <Route path='/userInfo' exact component={UserInfo} />
           <Route path='/edit' exact component={Edit} />
           <Route path='/users' exact component={Users} />
+          <Route path='/forms' exact component={Forms} />
           <Route path='/logout' exact component={Logout} />
         </Switch>
       </Router>
