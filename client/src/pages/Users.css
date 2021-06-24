@@ -1,0 +1,10 @@
+.users {
+  margin-left: 2%;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.username {
+  margin-top: 1%;
+}
