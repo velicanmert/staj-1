@@ -62,3 +62,7 @@ export const showForms = async username => {
   let forms = (await axios.get(`${LEAVE_FORM_API_URL}/${username}/forms`)).data;
   return forms;
 };
+
+export const deleteUser = async username => {
+  await axios.delete(`http://localhost:8080/api/users/${username}/delete`);
+};

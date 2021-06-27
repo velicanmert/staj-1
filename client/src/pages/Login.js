@@ -51,7 +51,6 @@ function Login() {
   const loginMethod = (id, pw) => {
     login(id, pw).then(res => {
       state.token = res;
-      console.log('token', state.token);
     });
   };
 
