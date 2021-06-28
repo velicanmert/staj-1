@@ -1,5 +1,5 @@
 import React from 'react';
-import { login } from '../services/Services';
+import { login, getUsers } from '../services/Services';
 import { Form, Input, Button } from 'antd';
 import './Login.css';
 import { useHistory } from 'react-router-dom';
@@ -48,17 +48,22 @@ function Login() {
     state.pw = value;
   };
 
+  let history = useHistory();
+
   const loginMethod = (id, pw) => {
     login(id, pw).then(res => {
       state.token = res;
+      getUsers().then(ress => {
+        if (ress.status === 'active') {
+          localStorage.setItem('token', state.token);
+          history.push('/home');
+        }
+      });
     });
   };
 
-  let history = useHistory();
-
   const handleLoginButton = () => {
     loginMethod(localStorage.getItem('username'), state.pw);
-    history.push('/home');
   };
 
   return (

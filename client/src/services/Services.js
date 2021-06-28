@@ -8,7 +8,6 @@ const SHOW_ALL_USERS_API_URL = 'http://localhost:8080/api/users/showall';
 export const login = async (id, pw) => {
   let info = { username: id, password: pw };
   let token = (await axios.post(LOGIN_API_URL, info)).data;
-  localStorage.setItem('token', token);
   axios.defaults.headers.common = { Authorization: `Bearer ${token}` };
   return token;
 };

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useHistory } from 'react';
+import React, { useEffect, useState } from 'react';
 import { showAllUsers, deleteUser } from '../services/Services';
 import { Link } from 'react-router-dom';
 import './Users.css';
@@ -19,7 +19,7 @@ function Users() {
     showAllUsers().then(res => {
       setUsers(res);
     });
-  }, []);
+  }, [onClickDelete]);
 
   return (
     <div>
