@@ -70,7 +70,12 @@ public class UserController {
     public void delete(@PathVariable("username") String username) throws Exception {
 
         Optional<Personnel> person = personnelRepository.findById(username);
-        person.get().setStatus("deleted");
+        if(person.get().getStatus().equals("active")) {
+            person.get().setStatus("deleted");
+        }
+        else{
+            person.get().setStatus("active");
+        }
         getPersonnel(username);
         personnelRepository.save(person.get());
 

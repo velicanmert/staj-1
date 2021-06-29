@@ -60,18 +60,6 @@ function Leave() {
   let history = useHistory();
 
   const handleLeaveFormButton = () => {
-    console.log(
-      'username',
-      localStorage.getItem('username'),
-      'date',
-      state.date,
-      'count',
-      state.count,
-      'type',
-      state.type,
-      'reason',
-      state.reason
-    );
     leaveMethod(
       localStorage.getItem('username'),
       state.date,
@@ -137,10 +125,15 @@ function Leave() {
           }
         ]}
       >
-        <Input
+        <select
           placeholder='type'
           onChange={event => getType(event.target.value)}
-        />
+        >
+          <option selected='true' disabled='disabled'></option>
+          <option value='Hastalık'>Hastalık</option>
+          <option value='Aile'>Aile</option>
+          <option value='Diğer'>Diğer</option>
+        </select>
       </Form.Item>
 
       <Form.Item
