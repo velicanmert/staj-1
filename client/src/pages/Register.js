@@ -71,7 +71,7 @@ function Register() {
       onFinishFailed={onFinishFailed}
     >
       <Form.Item
-        label='Username'
+        label='Kullanıcı Adı'
         name='username'
         rules={[
           {
@@ -81,14 +81,14 @@ function Register() {
         ]}
       >
         <Input
-          placeholder='username'
+          placeholder='kullanıcı adı'
           onChange={event => getId(event.target.value)}
         />
       </Form.Item>
 
       <Form.Item
         className='password'
-        label='Password'
+        label='Şifre'
         name='password'
         rules={[
           {
@@ -98,14 +98,14 @@ function Register() {
         ]}
       >
         <Input.Password
-          placeholder='password'
+          placeholder='şifre'
           onChange={event => getPassword(event.target.value)}
         />
       </Form.Item>
 
       <Form.Item
         className='bdate'
-        label='Birth Date'
+        label='Doğum Tarihi'
         name='bdate'
         rules={[
           {
@@ -115,14 +115,14 @@ function Register() {
         ]}
       >
         <Input
-          placeholder='dd-mm-yyyy'
+          placeholder='gg-aa-yyyy'
           onChange={event => getBdate(event.target.value)}
         />
       </Form.Item>
 
       <Form.Item
         className='idno'
-        label='Identification No'
+        label='TC No'
         name='idno'
         rules={[
           {
@@ -144,7 +144,7 @@ function Register() {
           htmlType='submit'
           onClick={handleRegisterButton}
         >
-          Submit
+          Gönder
         </Button>
       </Form.Item>
     </Form>

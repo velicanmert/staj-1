@@ -6,7 +6,7 @@ function Home() {
     message: ''
   };
 
-  state.message = `<div>Welcome </br> ${localStorage.getItem(
+  state.message = `<div>Merhaba </br> ${localStorage.getItem(
     'username'
   )} </div>`;
 

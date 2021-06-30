@@ -19,30 +19,16 @@ function Forms() {
     localStorage.removeItem('usernameForms');
   }, []);
 
-  /*return (
-    <div>
-      {forms.map(form => (
-        <div className='forms'>
-          <div className='username'>Username: {form.username}</div>
-          <div>Start Date: {form.date}</div>
-          <div>Day Count: {form.count}</div>
-          <div>Type: {form.type}</div>
-          <div>Reason: {form.reason}</div>
-        </div>
-      ))}
-    </div>
-  );*/
-
   return (
     <TableContainer component={Paper}>
       <Table aria-label='simple table'>
         <TableHead>
           <TableRow>
-            <TableCell>Username</TableCell>
-            <TableCell align='right'>Start Date</TableCell>
-            <TableCell align='right'>Day Count</TableCell>
-            <TableCell align='right'>Type</TableCell>
-            <TableCell align='right'>Reason</TableCell>
+            <TableCell>Kullanıcı Adı</TableCell>
+            <TableCell align='right'>Başlangıç Tarihi</TableCell>
+            <TableCell align='right'>İzin Süresi</TableCell>
+            <TableCell align='right'>İzin Türü</TableCell>
+            <TableCell align='right'>İzin Açıklama</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

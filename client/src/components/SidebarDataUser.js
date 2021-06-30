@@ -4,31 +4,31 @@ import * as AiIcons from 'react-icons/ai';
 
 export const SidebarDataUser = [
   {
-    title: 'Home',
+    title: 'Ana Sayfa',
     path: '/home',
     icon: <AiIcons.AiFillHome />,
     className: 'nav-text'
   },
   {
-    title: 'Leave Form',
+    title: 'İzin Formu Oluştur',
     path: '/leave',
     icon: <AiIcons.AiOutlineForm />,
     className: 'nav-text'
   },
   {
-    title: 'User Info',
+    title: 'Kullanıcı Bilgileri',
     path: '/userInfo',
     icon: <FaIcons.FaUserAlt />,
     className: 'nav-text'
   },
   {
-    title: 'Edit',
+    title: 'Kullanıcı Bilgilerini Düzenle',
     path: '/edit',
     icon: <AiIcons.AiFillEdit />,
     className: 'nav-text'
   },
   {
-    title: 'Logout',
+    title: 'Çıkış',
     path: '/logout',
     icon: <AiIcons.AiOutlineLogout />,
     className: 'nav-text'

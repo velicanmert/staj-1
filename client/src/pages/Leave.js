@@ -80,7 +80,7 @@ function Leave() {
     >
       <Form.Item
         className='datePicker'
-        label='Start Date'
+        label='Başlangıç Tarihi'
         name='date'
         rules={[
           {
@@ -99,7 +99,7 @@ function Leave() {
 
       <Form.Item
         className='count'
-        label='Day Count'
+        label='İzin Süresi'
         name='count'
         rules={[
           {
@@ -109,14 +109,14 @@ function Leave() {
         ]}
       >
         <Input
-          placeholder='day count'
+          placeholder='izin süresi'
           onChange={event => getCount(event.target.value)}
         />
       </Form.Item>
 
       <Form.Item
         className='type'
-        label='Type'
+        label='İzin Türü'
         name='type'
         rules={[
           {
@@ -138,7 +138,7 @@ function Leave() {
 
       <Form.Item
         className='reason'
-        label='Reason'
+        label='İzin Açıklama'
         name='reason'
         rules={[
           {
@@ -148,7 +148,7 @@ function Leave() {
         ]}
       >
         <Input
-          placeholder='reason'
+          placeholder='izin açıklama'
           onChange={event => getReason(event.target.value)}
         />
       </Form.Item>
@@ -160,7 +160,7 @@ function Leave() {
           htmlType='submit'
           onClick={handleLeaveFormButton}
         >
-          Submit
+          Gönder
         </Button>
       </Form.Item>
     </Form>

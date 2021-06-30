@@ -14,11 +14,11 @@ function UserInfo() {
   useEffect(() => {
     getUsers().then(res => {
       setUserData(
-        '<div>Username: ' +
+        '<div>Kullanıcı Adı: ' +
           res.username +
-          '</br>Date of birth: ' +
+          '</br>Doğum Tarihi: ' +
           res.dateBirth +
-          '</br>ID no: ' +
+          '</br>TC No: ' +
           res.identificationNo +
           '</div>'
       );
@@ -33,7 +33,7 @@ function UserInfo() {
         to={`/forms`}
         onClick={() => onClickForms(localStorage.getItem('username'))}
       >
-        <span>Leave Forms</span>
+        <span>İzin Formlarım</span>
       </Link>
     </div>
   );

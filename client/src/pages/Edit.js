@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { editUser } from '../services/Services';
 import { Form, Input, Button } from 'antd';
 import './Edit.css';
+import { useHistory } from 'react-router-dom';
 
 function Edit() {
   const layout = {
@@ -42,6 +43,7 @@ function Edit() {
     editUser(bd, idno);
   };
 
+  let history = useHistory();
   const handleEditButton = () => {
     editMethod(bdate, idno);
   };
@@ -55,7 +57,7 @@ function Edit() {
       onFinishFailed={onFinishFailed}
     >
       <Form.Item
-        label='Birth Date'
+        label='Doğum Tarihi'
         name='bdate'
         rules={[
           {
@@ -65,14 +67,14 @@ function Edit() {
         ]}
       >
         <Input
-          placeholder='dd-mm-yyyy'
+          placeholder='gg-aa-yyyy'
           onChange={event => getBdate(event.target.value)}
         />
       </Form.Item>
 
       <Form.Item
         className='idno'
-        label='Identification No'
+        label='TC No'
         name='idno'
         rules={[
           {
@@ -94,7 +96,7 @@ function Edit() {
           htmlType='submit'
           onClick={handleEditButton}
         >
-          Submit
+          Gönder
         </Button>
       </Form.Item>
     </Form>

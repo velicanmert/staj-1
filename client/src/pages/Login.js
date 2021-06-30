@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { login, getUsers } from '../services/Services';
 import { Form, Input, Button } from 'antd';
 import './Login.css';
@@ -50,13 +50,23 @@ function Login() {
 
   let history = useHistory();
 
+  const [errorM, setErrorM] = useState('');
+
   const loginMethod = (id, pw) => {
+    setErrorM(
+      'Girilen kullanıcı adı ve şifre ikilisi sistemde bulunmamaktadır!'
+    );
     login(id, pw).then(res => {
       state.token = res;
       getUsers().then(ress => {
         if (ress.status === 'active') {
+          setErrorM('');
           localStorage.setItem('token', state.token);
           history.push('/home');
+        } else {
+          setErrorM(
+            'Aktif bir kullanıcı değilsiniz! Lütfen, adminle iletişime geçin.'
+          );
         }
       });
     });
@@ -74,8 +84,9 @@ function Login() {
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
+      <div>{errorM}</div>
       <Form.Item
-        label='Username'
+        label='Kullanıcı Adı'
         name='username'
         rules={[
           {
@@ -85,14 +96,14 @@ function Login() {
         ]}
       >
         <Input
-          placeholder='username'
+          placeholder='kullanıcı adı'
           onChange={event => getUserName(event.target.value)}
         />
       </Form.Item>
 
       <Form.Item
         className='password'
-        label='Password'
+        label='Şifre'
         name='password'
         rules={[
           {
@@ -102,7 +113,7 @@ function Login() {
         ]}
       >
         <Input.Password
-          placeholder='password'
+          placeholder='şifre'
           onChange={event => getPassword(event.target.value)}
         />
       </Form.Item>
@@ -114,7 +125,7 @@ function Login() {
           htmlType='submit'
           onClick={handleLoginButton}
         >
-          Submit
+          Giriş
         </Button>
       </Form.Item>
     </Form>

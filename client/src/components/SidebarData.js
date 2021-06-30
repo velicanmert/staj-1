@@ -4,13 +4,13 @@ import * as FaIcons from 'react-icons/fa';
 
 export const SidebarData = [
   {
-    title: 'Login',
+    title: 'Giriş',
     path: '/',
     icon: <AiIcons.AiOutlineLogin />,
     className: 'nav-text'
   },
   {
-    title: 'Register',
+    title: 'Kayıt',
     path: '/register',
     icon: <FaIcons.FaRegRegistered />,
     className: 'nav-text'
