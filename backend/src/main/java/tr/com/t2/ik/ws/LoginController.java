@@ -32,7 +32,7 @@ public class LoginController {
         );
         SecurityContextHolder.getContext().setAuthentication(authentication);
         final String token = jwtTokenUtil.generateToken(authentication);
-        return ResponseEntity.ok(token);
+        return ResponseEntity.ok(token);    
     }
 
 }

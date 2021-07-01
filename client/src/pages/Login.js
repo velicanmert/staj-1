@@ -84,7 +84,7 @@ function Login() {
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
-      <div>{errorM}</div>
+      <div className='errorM'>{errorM}</div>
       <Form.Item
         label='Kullanıcı Adı'
         name='username'

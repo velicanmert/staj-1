@@ -19,3 +19,7 @@
 .password {
   margin-top: 2%;
 }
+
+.errorM {
+  color: red;
+}

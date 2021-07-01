@@ -10,7 +10,7 @@ export const SidebarDataUser = [
     className: 'nav-text'
   },
   {
-    title: 'İzin Formu Oluştur',
+    title: 'İzin Girişi',
     path: '/leave',
     icon: <AiIcons.AiOutlineForm />,
     className: 'nav-text'
