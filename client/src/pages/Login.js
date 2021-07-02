@@ -53,9 +53,9 @@ function Login() {
   const [errorM, setErrorM] = useState('');
 
   const loginMethod = (id, pw) => {
-    setErrorM(
+    /*setErrorM(
       'Girilen kullanıcı adı ve şifre ikilisi sistemde bulunmamaktadır!'
-    );
+    );*/
     login(id, pw).then(res => {
       state.token = res;
       getUsers().then(ress => {

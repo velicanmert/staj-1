@@ -38,7 +38,7 @@ function Forms() {
                 {form.username}
               </TableCell>
               <TableCell align='right'>{form.date}</TableCell>
-              <TableCell align='right'>{form.count}</TableCell>
+              <TableCell align='right'>{form.count} gün</TableCell>
               <TableCell align='right'>{form.type}</TableCell>
               <TableCell align='right'>{form.reason}</TableCell>
             </TableRow>
